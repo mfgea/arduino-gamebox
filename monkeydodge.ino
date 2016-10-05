@@ -101,7 +101,7 @@ void MonkeyDodge::showDonkey() {
     lcd.setCursor(dx, dy);
     lcd.write(byte(3));
   }
-  
+
   dx -= spd;
   if (dx < 0) {
     dx = 16 + random(0,20);
@@ -132,7 +132,7 @@ void MonkeyDodge::startLevel(int lvl) {
   dy = 0;
   spdMin = (45 + float(level) * 5) / 100;
   spd = spdMin;
-  
+
   lcd.clear();
   lcd.setCursor(0,0);
   lcd.print("    LEVEL ");
@@ -140,9 +140,9 @@ void MonkeyDodge::startLevel(int lvl) {
   lcd.setCursor(0,1);
   lcd.print("    LIVES ");
   lcd.print(lives);
-  
+
   sfx.playMusic(sfx_melody_1, sfx_beats_1, sfx_length_1);
-  
+
   delay(2000);
 }
 
