@@ -10,6 +10,8 @@
 #include "sfx.h"
 #include "gamebox.h"
 #include "menu.h"
+#include "runner.h"
+#include "monkeydodge.h"
 
 // Settings
 #define DEBUG 0

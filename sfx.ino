@@ -30,3 +30,13 @@ void SFX::playTune(const int *melody) const {
     melody += 2;
   }
 }
+
+void SFX::playMusic(int melody[], int beats[], int length) const {
+  for (int i = 0; i < length; i++) {
+    int duration = 1000/beats[i];
+    playSound(melody[i], duration);
+    int pause = duration * 1.30;
+    delay(pause);
+    noTone(speakerPin);
+  }
+}
