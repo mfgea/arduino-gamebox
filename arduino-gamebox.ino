@@ -9,20 +9,21 @@
 #include <LiquidCrystal_I2C.h>
 #include "sfx.h"
 #include "gamebox.h"
+#include "menu.h"
 
 // Settings
 #define DEBUG 0
 
 // Pins
-#define BTN_LEFT_PIN 2;
-#define BTN_RIGHT_PIN 3;
-#define SPKR_PIN 8;
+const int BUTTON1_PIN = 2;
+const int BUTTON2_PIN = 3;
+const int SPEAKER_PIN = 8;
 
-GameBox gamebox();
-GamesMenu menu();
-SFX sfx(SPKR_PIN);
+GameBox gamebox;
+GamesMenu menu;
+SFX sfx;
 
-LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 void debug(const char *str) {
 #if DEBUG
@@ -34,6 +35,8 @@ void setup() {
 #if DEBUG
   Serial.begin(9600);
 #endif
+
+  sfx.init(SPEAKER_PIN);
 
   // Set interrupts for button pins
   pciSetup(BUTTON1_PIN);

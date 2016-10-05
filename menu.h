@@ -6,7 +6,7 @@ class GamesMenu: public ArduinoGame {
     virtual void initialize();
     virtual const char* getName() { return ""; }
     virtual void draw() const;
-    virtual void update();
+    virtual void update(int, int);
     virtual boolean mustRefreshDisplay();
 
     void addGame(ArduinoGame *pGame);

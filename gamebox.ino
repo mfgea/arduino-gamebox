@@ -4,15 +4,11 @@
  *
  *  GameBox v1.0
  */
-
-#include "gamebox.h"
-#include "menu.h"
-
 void GameBox::init() {
   debug("Initialization");
 
-  button1Pressed = 0;
-  button2Pressed = 0;
+  button2State = 0;
+  button2State = 0;
 
   lcd.begin(16, 2);
 
@@ -23,7 +19,6 @@ void GameBox::init() {
   lcd.print("by Matias Gea");
 
   debug("Playing intro sound");
-  sfx = new SFX(SPKR_PIN);
   sfx.introSound();
 
   delay(2000);
@@ -42,8 +37,8 @@ void GameBox::startGame(ArduinoGame *game) {
 }
 
 void GameBox::update() {
-  if(button1Pressed || button2Pressed) {
-    updating();
+  if(button1State || button2State) {
+    debug("Updating states");
   }
   if(button1State) {
     debug("Button1 Pressed");

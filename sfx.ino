@@ -1,10 +1,8 @@
-#include "sfx.h"
 #include "pitches.h"
 
-SFX::SFX(const int pin) {
+void SFX::init(const int pin) {
   speakerPin = pin;
 }
-
 void SFX::introSound() {
   for(int i=NOTE_C4; i<NOTE_C6; ++i) {
     playSound(i, 150);

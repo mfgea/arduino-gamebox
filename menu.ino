@@ -4,9 +4,6 @@
  *
  *  Games Menu v1.0
  */
-
-#include "menu.h"
-
 GamesMenu::GamesMenu() {
   gameCount = 0;
   refreshLCD = false;
@@ -36,7 +33,7 @@ void GamesMenu::draw() const {
   }
 }
 
-void GamesMenu::update(boolean btn1Pressed, boolean btn2Pressed) {
+void GamesMenu::update(int btn1Pressed, int btn2Pressed) {
   refreshLCD = false;
 
   if (btn1Pressed) {
