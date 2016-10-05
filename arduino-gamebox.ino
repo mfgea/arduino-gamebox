@@ -12,6 +12,7 @@
 #include "menu.h"
 #include "runner.h"
 #include "monkeydodge.h"
+#include "superscooter.h"
 
 // Settings
 #define DEBUG 0
